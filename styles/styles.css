@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+div#room {
+  background-image: url("../img/438782-PEUG1H-833.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+a {
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 2px solid;
+  color: #fff;
+  font-size: 3vh;
+  font-family: "arial", sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+div#mask {
+  background-color: #000;
+  transition: 1s linear;
+}
+
+div#light {
+  top: 1vh;
+  left: 1vh;
+  width: 10vh;
+  height: 10vh;
+  border: 5vh solid greenyellow;
+  border-radius: 50%;
+  z-index: 1;
+  animation: disco infinite 1s linear;
+  cursor: pointer;
+}
+
+@keyframes disco {
+  50% {
+    border-width: 1px;
+  }
+}
+
+#light:hover,
+#light.clicked {
+  animation: none;
+}
+
+#light:hover+div,
+.revealed {
+  opacity: 0;
+}
+
+.active {
+  z-index: 1;
+}
+
+#light.clicked {
+  border-color: crimson;
+}
